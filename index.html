@@ -1,1 +1,186 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101014">
+<title>MYTHIC E-SPORTS ZONE</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0d0d12;color:#fff;font-family:Arial,sans-serif}
+header{padding:20px;background:#19151b;border-bottom:2px solid #e32636}
+header h2{margin:0;color:#ff4757;font-size:19px}
+header small{color:#aaa;letter-spacing:2px}
+.container{max-width:700px;margin:auto;padding:16px}
+.hero{padding:25px 18px;border-radius:18px;background:linear-gradient(135deg,#48101c,#171720);border:1px solid #8e2634;margin-bottom:20px}
+.hero h1{font-size:30px;margin:5px 0 10px}
+.hero p{color:#ccc;line-height:1.5}
+button{border:0;border-radius:9px;padding:12px 15px;background:#e32636;color:white;font-weight:bold;cursor:pointer}
+button.secondary{background:#30303b}
+.section{display:none}
+.section.active{display:block}
+h2{font-size:21px}
+.card{background:#191922;border:1px solid #33333f;border-radius:14px;padding:16px;margin:12px 0}
+.card h3{margin:5px 0;color:#ff6875}
+.info{color:#aaa;font-size:13px;line-height:1.7}
+.tag{color:#ff8993;font-size:11px;border:1px solid #71303a;padding:5px 9px;border-radius:20px}
+input,select{width:100%;padding:13px;margin:7px 0 15px;background:#101018;border:1px solid #444;color:white;border-radius:8px}
+label{font-size:13px;color:#ccc}
+nav{position:fixed;bottom:0;left:0;right:0;background:#191920;border-top:1px solid #383842;display:flex;justify-content:space-around;padding:10px 2px}
+nav button{background:transparent;color:#bbb;padding:9px 7px;font-size:12px}
+nav button.active{color:#ff5968}
+main{padding-bottom:85px}
+.notice{background:#2b2117;border:1px solid #71502a;color:#f4d9a9;padding:12px;border-radius:10px;font-size:12px;line-height:1.5}
+footer{text-align:center;color:#777;font-size:11px;padding:20px}
+</style>
+</head>
+<body>
+
+<header>
+<h2>MYTHIC E-SPORTS ZONE</h2>
+<small>COMPETE • DOMINATE • CONQUER</small>
+</header>
+
+<main class="container">
+
+<section id="home" class="section active">
+<div class="hero">
+<p style="color:#ff8993">WELCOME TO THE ARENA</p>
+<h1>PLAY. COMPETE.<br>RISE TO MYTHIC.</h1>
+<p>Your ultimate community tournament platform. Join tournaments and compete with your squad.</p>
+<button onclick="show('tournaments')">Explore Tournaments</button>
+</div>
+
+<h2>Our Features</h2>
+<div class="card">🏆 Tournament Registration</div>
+<div class="card">🎮 Solo • Duo • Squad Matches</div>
+<div class="card">📊 Leaderboard & Results</div>
+<div class="card">🔐 Secure Admin Management</div>
+
+<h2>Featured Match</h2>
+<div class="card">
+<span class="tag">UPCOMING</span>
+<h3>MYTHIC WEEKLY CLASH</h3>
+<p class="info">Mode: Squad<br>Map: Bermuda<br>Entry: Free</p>
+<button onclick="show('register')">Register Interest</button>
+</div>
+</section>
+
+<section id="tournaments" class="section">
+<h2>TOURNAMENTS</h2>
+
+<div class="card">
+<span class="tag">UPCOMING</span>
+<h3>MYTHIC WEEKLY CLASH</h3>
+<p class="info">Mode: Squad<br>Map: Bermuda<br>Entry: Free</p>
+<button onclick="registerMode('Squad')">Join Interest List</button>
+</div>
+
+<div class="card">
+<span class="tag">UPCOMING</span>
+<h3>MYTHIC DUO SHOWDOWN</h3>
+<p class="info">Mode: Duo<br>Map: Kalahari<br>Entry: Free</p>
+<button onclick="registerMode('Duo')">Join Interest List</button>
+</div>
+
+<div class="card">
+<span class="tag">UPCOMING</span>
+<h3>MYTHIC SOLO ARENA</h3>
+<p class="info">Mode: Solo<br>Map: Alpine<br>Entry: Free</p>
+<button onclick="registerMode('Solo')">Join Interest List</button>
+</div>
+</section>
+
+<section id="register" class="section">
+<h2>PLAYER REGISTRATION</h2>
+<div class="card">
+<form id="regForm">
+<label>Player Name</label>
+<input id="player" required maxlength="30" placeholder="Your in-game name">
+
+<label>Free Fire UID</label>
+<input id="uid" required inputmode="numeric" placeholder="Your game UID">
+
+<label>Team Name</label>
+<input id="team" placeholder="Your team name">
+
+<label>Match Mode</label>
+<select id="mode">
+<option>Squad</option>
+<option>Duo</option>
+<option>Solo</option>
+</select>
+
+<button type="submit">Preview Registration</button>
+</form>
+<p class="info" id="message">Demo only. Your information will not be sent or saved.</p>
+</div>
+</section>
+
+<section id="leaderboard" class="section">
+<h2>LEADERBOARD</h2>
+<div class="card"><h3>1. MYTHIC RAVENS</h3><p class="info">42 Points • Sample Data</p></div>
+<div class="card"><h3>2. RED PHANTOMS</h3><p class="info">36 Points • Sample Data</p></div>
+<div class="card"><h3>3. NIGHT RAIDERS</h3><p class="info">29 Points • Sample Data</p></div>
+<p class="info">These are demonstration rankings, not actual match results.</p>
+</section>
+
+<section id="profile" class="section">
+<h2>PLAYER PROFILE</h2>
+<div class="card">
+<h3>PLAYER ACCOUNT</h3>
+<p class="info">Player login and profile management will be activated after Firebase setup.</p>
+<button onclick="show('register')">Register Interest</button>
+</div>
+</section>
+
+<section id="admin" class="section">
+<h2>ADMIN CONTROL</h2>
+<div class="notice">
+Admin authentication is not connected yet. We will add secure Super Admin and Multiple Admin access through Firebase. Do not use a public password.
+</div>
+<div class="card">
+<h3>ADMIN PANEL</h3>
+<p class="info">Manage tournaments, approve players, publish room details and update match results.</p>
+<p class="info">Backend setup pending.</p>
+</div>
+</section>
+
+</main>
+
+<footer>MYTHIC E-SPORTS ZONE<br>Unofficial Community Tournament Project</footer>
+
+<nav>
+<button class="active" onclick="show('home',this)">Home</button>
+<button onclick="show('tournaments',this)">Events</button>
+<button onclick="show('leaderboard',this)">Ranks</button>
+<button onclick="show('profile',this)">Profile</button>
+<button onclick="show('admin',this)">Admin</button>
+</nav>
+
+<script>
+function show(id,btn){
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+if(btn)btn.classList.add('active');
+window.scrollTo(0,0);
+}
+
+function registerMode(mode){
+document.getElementById('mode').value=mode;
+show('register');
+}
+
+document.getElementById('regForm').addEventListener('submit',function(e){
+e.preventDefault();
+document.getElementById('message').textContent=
+'Preview created for '+document.getElementById('player').value+
+'. This is not a real registration yet. Firebase connection is required.';
+});
+</script>
+
+</body>
+  </html>
+  
