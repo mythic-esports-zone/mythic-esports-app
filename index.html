@@ -181,6 +181,31 @@ document.getElementById('message').textContent=
 });
 </script>
 
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
+<script>
+// Firebase Configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyC4EsUzbu00d3dWnKojjNMy5WvQarPLBSA",
+  authDomain: "mythic-esports-zone.firebaseapp.com",
+  projectId: "mythic-esports-zone",
+  storageBucket: "mythic-esports-zone.firebasestorage.app",
+  messagingSenderId: "272118238225",
+  appId: "1:272118238225:web:219dd2eff36cdaa829f5b0"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+console.log("MYTHIC E-SPORTS ZONE Firebase Connected!");
+  </script>
+  
 </body>
   </html>
   
