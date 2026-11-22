@@ -1,0 +1,12 @@
+
+{
+  "name": "MYTHIC E-SPORTS ZONE",
+  "short_name": "MYTHIC ZONE",
+  "description": "Free Fire Esports Tournament Platform",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#e50914",
+  "orientation": "portrait"
+}
